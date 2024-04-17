@@ -18,6 +18,4 @@ public class Book {
     private String author;
     private String ISBN;
     private Date publicationYear;
-
-
 }
