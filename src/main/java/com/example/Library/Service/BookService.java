@@ -16,10 +16,20 @@ public class BookService {
     BookService(BookRepository repository){
         this.repository=repository;
     }
-
+    public Book save(Book book){
+        return repository.save(book);
+    }
     public Page<Book> findAll(Pageable page){
 
         return repository.findAll(page);
 
+    }
+    public Book getBook(long id){
+        return repository.findById(id).get();
+    }
+
+    public void delete(long id){
+        Book book=repository.findById(id).get();
+         repository.delete(book);
     }
 }
